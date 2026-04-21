@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OMG AI — Profesionální produktové vizuály</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <a href="#" class="logo"><img src="assets/logo/1_3.png" alt="OMG AI" /></a>
+      <a href="#kontakt" class="btn-nav">Nezávazně poptat</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-content">
+      <h1>Váš produkt si zaslouží<br>lepší fotky.</h1>
+      <p class="subheadline"><span style="color: #00D4AA">AI</span> produktové fotky, lifestylové vizuály a reklamní bannery pro e-shopy.</p>
+      <div class="hero-buttons">
+        <a href="#kontakt" class="btn-primary">Nezávazně poptat</a>
+        <a href="#portfolio" class="btn-outline">Zobrazit portfolio →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- JAK TO FUNGUJE -->
+  <section id="jak-to-funguje">
+    <div class="container">
+      <h2>Tři kroky ke skvělým fotkám</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </div>
+          <h3>Pošlete podklady</h3>
+          <p>Vyplňte krátký dotazník. Zjistíme, co potřebujete a jak má váš produkt vypadat.</p>
+        </div>
+        <div class="step-divider"></div>
+        <div class="step">
+          <div class="step-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+          </div>
+          <h3>My navrhneme koncepty</h3>
+          <p>Na základě vašeho produktu a cílové skupiny připravíme návrhy scén. Vy jen schválíte směr.</p>
+        </div>
+        <div class="step-divider"></div>
+        <div class="step">
+          <div class="step-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="m9 21 3-3 3 3"/><path d="M9 12h.01M12 12h.01M15 12h.01"/></svg>
+          </div>
+          <h3>Dostanete hotové vizuály</h3>
+          <p>Během 2–3 pracovních dnů máte profesionální vizuály připravené k použití.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+    <div class="container">
+      <h2>Portfolio</h2>
+      <div class="tabs">
+        <button class="tab active" data-tab="produktove">Produktové fotografie</button>
+        <button class="tab" data-tab="reklamni">Reklamní bannery</button>
+        <button class="tab" data-tab="lifestyle">Lifestylové fotky</button>
+        <button class="tab" data-tab="interiery">Interiéry</button>
+      </div>
+      <div id="tab-produktove" class="tab-content active">
+        <div class="grid" id="grid-produktove"></div>
+        <div class="carousel" id="carousel-produktove">
+          <div class="carousel-track" id="track-produktove"></div>
+          <div class="carousel-dots" id="dots-produktove"></div>
+        </div>
+      </div>
+      <div id="tab-reklamni" class="tab-content">
+        <div class="grid" id="grid-reklamni"></div>
+        <div class="carousel" id="carousel-reklamni">
+          <div class="carousel-track" id="track-reklamni"></div>
+          <div class="carousel-dots" id="dots-reklamni"></div>
+        </div>
+      </div>
+      <div id="tab-lifestyle" class="tab-content">
+        <div class="grid" id="grid-lifestyle"></div>
+        <div class="carousel" id="carousel-lifestyle">
+          <div class="carousel-track" id="track-lifestyle"></div>
+          <div class="carousel-dots" id="dots-lifestyle"></div>
+        </div>
+      </div>
+      <div id="tab-interiery" class="tab-content">
+        <div class="grid" id="grid-interiery"></div>
+        <div class="carousel" id="carousel-interiery">
+          <div class="carousel-track" id="track-interiery"></div>
+          <div class="carousel-dots" id="dots-interiery"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CENÍK -->
+  <section id="cenik">
+    <div class="container">
+      <h2>Ceník</h2>
+      <div class="pricing-table">
+        <div class="plan">
+          <div class="plan-name">Starter</div>
+          <div class="plan-detail">5 vizuálů</div>
+
+          <div class="plan-price">2 490 Kč</div>
+        </div>
+        <div class="plan featured">
+          <div class="plan-badge">Nejpopulárnější</div>
+          <div class="plan-name">Standard</div>
+          <div class="plan-detail">10 vizuálů</div>
+
+          <div class="plan-price">4 490 Kč</div>
+        </div>
+        <div class="plan">
+          <div class="plan-name">Premium</div>
+          <div class="plan-detail">20 vizuálů</div>
+
+          <div class="plan-price">7 990 Kč</div>
+        </div>
+      </div>
+      <p class="pricing-note">Každý vizuál dodáváme ve formátu 1:1 nebo 4:5 dle vašeho výběru a vždy také v 9:16.</p>
+      <div class="pricing-footer">
+        <p class="pricing-footer__text">Potřebujete něco jiného, nebo kombinaci služeb? Rádi Vám připravíme nabídku na míru.</p>
+        <a href="#kontakt" class="btn-outline">Napište nám →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- O MNĚ -->
+  <section id="o-mne">
+    <div class="container">
+      <div class="about-block">
+        <h2>Ahoj, jsem Martin</h2>
+        <p>zakladatel <a href="https://www.vgmedia.cz" target="_blank" rel="noopener noreferrer">VG Media</a>. Spravuji firmám Meta reklamy a vím, co funguje. Meta potřebuje data — a k tomu potřebujete testovat více variant vizuálů. Díky AI vytvoříme hyperrealistické fotky, které málokdo pozná od reálných, rychleji a za zlomek ceny klasického focení.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <h2>Časté otázky</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Jak to celé funguje?</button>
+          <div class="faq-a"><p>Pošlete nám fotku produktu a krátký popis. My navrhneme koncepty, vy schválíte směr a během 2–3 pracovních dnů máte hotové vizuály.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Potřebuji profesionální fotku produktu?</button>
+          <div class="faq-a"><p>Ne, stačí běžná fotka z telefonu. Důležité je aby byl produkt dobře viditelný. Referenční fotku produktu však vždy potřebujeme — bez ní vizuály nedokážeme vytvořit.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Mohu požádat o úpravy?</button>
+          <div class="faq-a"><p>Ano, výsledek společně doladíme tak, abyste byli spokojeni.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Pro koho je služba vhodná?</button>
+          <div class="faq-a"><p>Pro e-shopy, značky a výrobce kteří potřebují profesionální vizuály pro web nebo reklamu.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">V jakých formátech dostanu fotky?</button>
+          <div class="faq-a"><p>Standardně dodáváme formáty 1:1, 4:5 a 9:16 — připravené pro Instagram feed, Stories i Reels. Na přání také 16:9, 3:4 nebo 2:3. Soubory dodáváme ve formátu JPG.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Jak mi pošlete hotové fotky?</button>
+          <div class="faq-a"><p>Přes Google Drive ke stažení.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Budou fotky vypadat jako můj skutečný produkt?</button>
+          <div class="faq-a"><p>Ano, vždy generujeme z vaší referenční fotky produktu.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Mohu fotky použít kdekoliv?</button>
+          <div class="faq-a"><p>Ano, po zaplacení jsou fotky vaše bez omezení použití.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Jak začít?</button>
+          <div class="faq-a"><p><a href="#kontakt">Napište nám přes formulář níže.</a></p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section id="kontakt">
+    <div class="container">
+      <h2>Kontakt</h2>
+      <p class="section-sub">Napište nám, rádi připravíme nabídku na míru.</p>
+      <form id="contact-form">
+        <div class="form-group">
+          <label for="name">Jméno</label>
+          <input type="text" id="name" name="name" placeholder="Vaše jméno" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="vas@email.cz" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Řekněte nám více o vašem projektu</label>
+          <textarea id="message" name="message" placeholder="Řekněte nám o vašem produktu a co potřebujete…" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Odeslat</button>
+        <div id="form-feedback" class="form-feedback" aria-live="polite"></div>
+      </form>
+      <div class="contact-info">
+        <a href="mailto:info@omgai.cz">info@omgai.cz</a>
+        <a href="https://www.instagram.com/o_mg_ai/" target="_blank" rel="noopener noreferrer">@o_mg_ai</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 OMG <span>AI</span></p>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Náhled obrázku">
+    <button class="lightbox-close" aria-label="Zavřít">&times;</button>
+    <button class="lightbox-prev" aria-label="Předchozí">&#8249;</button>
+    <img id="lightbox-img" src="" alt="Portfolio vizuál" />
+    <button class="lightbox-next" aria-label="Další">&#8250;</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
