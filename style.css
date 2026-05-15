@@ -166,11 +166,12 @@ h2 {
 /* ===== HERO ===== */
 #hero {
   min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 0 24px;
+  padding: 80px 24px 40px;
   position: relative;
   overflow: hidden;
   background-image: url('assets/Hero/Hero.png');
@@ -214,12 +215,6 @@ h2 {
   white-space: nowrap;
   margin-left: auto;
   margin-right: auto;
-}
-
-/* ===== HERO ===== */
-#hero {
-  position: relative;
-  overflow: hidden;
 }
 
 #hero::before {
@@ -548,9 +543,10 @@ h2 {
   font-size: 16px;
   font-weight: 500;
   color: var(--text);
-  white-space: nowrap;
-  max-width: none;
+  white-space: normal;
+  max-width: 600px;
   line-height: 1.5;
+  padding: 0 16px;
 }
 
 /* ===== O MNĚ ===== */
@@ -651,7 +647,7 @@ h2 {
 }
 
 .faq-a.open {
-  max-height: 200px;
+  max-height: 500px;
 }
 
 .faq-a p {
@@ -833,6 +829,25 @@ footer span {
 @media (max-width: 768px) {
   section { padding: 72px 0; }
 
+  #jak-to-funguje { padding: 72px 0; }
+
+  .subheadline {
+    white-space: normal;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-outline {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+  }
+
   .steps {
     flex-direction: column;
     gap: 40px;
@@ -844,19 +859,90 @@ footer span {
     margin: 0 auto;
   }
 
+  .step p {
+    text-align: center;
+  }
+
+  .tabs {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tab {
+    font-size: 13px;
+    padding: 9px 16px;
+  }
 
   .lightbox-prev { left: 8px; }
   .lightbox-next { right: 8px; }
 }
 
 @media (max-width: 480px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+  section { padding: 60px 0; }
+
+  h2 { margin-bottom: 40px; }
+
+  .logo img { height: 44px; }
+
+  .btn-nav {
+    font-size: 13px;
+    padding: 7px 14px;
   }
 
   .subheadline {
-    white-space: normal;
+    font-size: 15px;
+  }
+
+  #contact-form .btn-primary {
+    width: 100%;
+  }
+
+  .lightbox-prev,
+  .lightbox-next {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+  }
+
+  /* Pricing - stack vertically on small phones */
+  .plan {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 16px 20px;
+  }
+
+  .plan-name {
+    min-width: auto;
+    font-size: 15px;
+  }
+
+  .plan-detail {
+    flex: none;
+  }
+
+  .plan-price {
+    font-size: 20px;
+    margin-top: 4px;
+  }
+
+  .plan-badge {
+    right: 12px;
+  }
+
+  /* FAQ - smaller padding on narrow screens */
+  .faq-q {
+    font-size: 15px;
+    padding: 16px 18px;
+  }
+
+  .faq-a p {
+    padding: 0 18px 16px;
     font-size: 14px;
+  }
+
+  /* About section */
+  .about-block p {
+    font-size: 15px;
   }
 }
