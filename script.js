@@ -7,33 +7,32 @@ window.addEventListener('scroll', () => {
 // ===== PORTFOLIO IMAGES =====
 const portfolioImages = {
   interiery: [
-    'assets/portfolio/interiery/hf_20260318_141601_2458f9b3-caf3-40f5-a3ec-e05d8a0a8131.webp',
-    'assets/portfolio/interiery/hf_20260323_092446_76326e3e-5e26-45b0-8aa1-5da152d0251a.webp',
-    'assets/portfolio/interiery/hf_20260413_123009_fe9ead09-7415-43f0-beba-9db0fc6a638d.webp',
-    'assets/portfolio/interiery/hf_20260413_124515_5d03d794-8f10-4814-9cd9-6be86181e8fa.webp',
-    'assets/portfolio/interiery/hf_20260413_140624_ad81f9af-25d6-4358-9c1d-ead023102089.webp',
+    { src: 'assets/portfolio/interiery/hf_20260318_141601_2458f9b3-caf3-40f5-a3ec-e05d8a0a8131.webp', alt: 'AI vizualizace moderní kuchyně s mramorovým ostrůvkem a dřevěnými skříňkami' },
+    { src: 'assets/portfolio/interiery/hf_20260323_092446_76326e3e-5e26-45b0-8aa1-5da152d0251a.webp', alt: 'AI lifestyle vizuál produktů pro kočky v obývacím pokoji se skandinávským interiérem' },
+    { src: 'assets/portfolio/interiery/hf_20260413_123009_fe9ead09-7415-43f0-beba-9db0fc6a638d.webp', alt: 'AI vizualizace kuchyně z tmavého ořechového dřeva s vestavěnou digestoří' },
+    { src: 'assets/portfolio/interiery/hf_20260413_124515_5d03d794-8f10-4814-9cd9-6be86181e8fa.webp', alt: 'AI vizualizace světlé skandinávské kuchyně s ostrovní digestoří a dubovým dřevem' },
+    { src: 'assets/portfolio/interiery/hf_20260413_140624_ad81f9af-25d6-4358-9c1d-ead023102089.webp', alt: 'AI vizualizace minimalistické kuchyně se stropní digestoří v béžových tónech' },
   ],
   produktove: [
-    'assets/portfolio/produktove/1.webp',
-    'assets/portfolio/produktove/2.webp',
-    'assets/portfolio/produktove/3.webp',
-    'assets/portfolio/produktove/4.webp',
+    { src: 'assets/portfolio/produktove/1.webp', alt: 'AI produktová fotografie Alcorythm shot s efektem stříkající tekutiny na tmavém pozadí' },
+    { src: 'assets/portfolio/produktove/2.webp', alt: 'AI lifestylová produktová fotografie Alcorythm shot zasazený do ledového bloku v zimní scenérii' },
+    { src: 'assets/portfolio/produktove/3.webp', alt: 'AI produktová fotografie Apex Nutrition whey protein s dramatickým světelným efektem' },
+    { src: 'assets/portfolio/produktove/4.webp', alt: 'AI produktová fotografie Aurelia Mineral Glow Serum s krabičkou na kamenném podkladu' },
   ],
   reklamni: [
-    'assets/portfolio/reklamni/hf_20260210_153102_b44c975d-a635-4097-b0ab-5f2d973d2521.webp',
-    'assets/portfolio/reklamni/hf_20260210_161343_dc610f2b-791b-4ac6-89ed-348494a532cd.webp',
-    'assets/portfolio/reklamni/hf_20260226_083122_01da6589-81ef-4066-82f3-1c6d244d5006.webp',
-    'assets/portfolio/reklamni/hf_20260305_061827_24da0e5f-cb83-4ee0-a588-cd8088a5e172.webp',
-    'assets/portfolio/reklamni/hf_20260309_100346_d00a34a2-8f69-4039-814f-38001bc16a3a.webp',
-    'assets/portfolio/reklamni/hf_20260311_073902_b1bb702c-4bdc-4f1c-9796-d784f4fb9471.webp',
-    'assets/portfolio/reklamni/hf_20260316_065708_772d6a6d-6065-40ab-b8b0-7c11b8384cc5.webp',
-    'assets/portfolio/reklamni/hf_20260323_105534_5dd2f142-9755-4857-b3c3-72830ca2272b.webp',
-    'assets/portfolio/reklamni/hf_20260324_054034_c603b6ee-9bbc-45b6-85d1-c71b6948170a.webp',
-    'assets/portfolio/reklamni/hf_20260324_070138_eeb60655-e674-4496-8ccb-a45142b1ebb4.webp',
-    'assets/portfolio/reklamni/hf_20260326_121531_eba4fb1a-0d3a-41ce-ae97-70829e6b865f.webp',
+    { src: 'assets/portfolio/reklamni/hf_20260210_153102_b44c975d-a635-4097-b0ab-5f2d973d2521.webp', alt: 'AI reklamní vizuál Colostrum+ Junior doplněk stravy pro děti s dívkou v kuchyni' },
+    { src: 'assets/portfolio/reklamni/hf_20260210_161343_dc610f2b-791b-4ac6-89ed-348494a532cd.webp', alt: 'AI lifestylový reklamní vizuál Unifit Junior sportovní výživa s dívkou v tělocvičně' },
+    { src: 'assets/portfolio/reklamni/hf_20260226_083122_01da6589-81ef-4066-82f3-1c6d244d5006.webp', alt: 'AI reklamní vizuál Alcorythm shot s modelkou v červených šatech na párty' },
+    { src: 'assets/portfolio/reklamni/hf_20260305_061827_24da0e5f-cb83-4ee0-a588-cd8088a5e172.webp', alt: 'AI lifestylová fotografie Petgourmet kočičí konzerva Rabbit s kočkou v kuchyni' },
+    { src: 'assets/portfolio/reklamni/hf_20260309_100346_d00a34a2-8f69-4039-814f-38001bc16a3a.webp', alt: 'AI reklamní banner Petgourmet Probiotics pro mazlíčky se slevovou akcí 83 %' },
+    { src: 'assets/portfolio/reklamni/hf_20260311_073902_b1bb702c-4bdc-4f1c-9796-d784f4fb9471.webp', alt: 'AI produktová fotografie Petgourmet kočičí konzerva Rabbit v domácím prostředí' },
+    { src: 'assets/portfolio/reklamni/hf_20260316_065708_772d6a6d-6065-40ab-b8b0-7c11b8384cc5.webp', alt: 'AI produktová fotografie Alcorythm shot na barové desce s bokeh osvětlením' },
+    { src: 'assets/portfolio/reklamni/hf_20260323_105534_5dd2f142-9755-4857-b3c3-72830ca2272b.webp', alt: 'AI reklamní banner antiparazitický obojek a pipety akce sleva 15 %' },
+    { src: 'assets/portfolio/reklamni/hf_20260324_054034_c603b6ee-9bbc-45b6-85d1-c71b6948170a.webp', alt: 'AI produktová fotografie Menforsan antiparazitický obojek a pipety na trávníku' },
+    { src: 'assets/portfolio/reklamni/hf_20260324_070138_eeb60655-e674-4496-8ccb-a45142b1ebb4.webp', alt: 'AI reklamní vizuál Menforsan antiparazitika sleva 15 % v přírodním prostředí' },
+    { src: 'assets/portfolio/reklamni/hf_20260326_121531_eba4fb1a-0d3a-41ce-ae97-70829e6b865f.webp', alt: 'AI lifestylový vizuál Menforsan přírodní repelent pro psy s labrádorem v lese' },
   ],
-  lifestyle: [
-  ],
+  lifestyle: [],
 };
 
 function buildGrid(gridId, images) {
@@ -41,13 +40,13 @@ function buildGrid(gridId, images) {
   const category = gridId.replace('grid-', '');
   const LIMIT = 6;
 
-  images.forEach((src, index) => {
+  images.forEach((image, index) => {
     const item = document.createElement('div');
     item.className = 'grid-item' + (index >= LIMIT ? ' grid-item--hidden' : '');
 
     const img = document.createElement('img');
-    img.src = src;
-    img.alt = `Portfolio vizuál ${index + 1}`;
+    img.src = image.src;
+    img.alt = image.alt;
     img.loading = 'lazy';
 
     item.appendChild(img);
@@ -85,12 +84,12 @@ function buildCarousel(category, images) {
   let dragX = 0;
   let dragging = false;
 
-  images.forEach((src, i) => {
+  images.forEach((image, i) => {
     const slide = document.createElement('div');
     slide.className = 'carousel-slide';
     const img = document.createElement('img');
-    img.src = src;
-    img.alt = `Portfolio vizuál ${i + 1}`;
+    img.src = image.src;
+    img.alt = image.alt;
     img.loading = 'lazy';
     slide.appendChild(img);
     track.appendChild(slide);
@@ -164,7 +163,8 @@ let savedScrollY = 0;
 function openLightbox(category, index) {
   currentCategory = category;
   currentIndex = index;
-  lightboxImg.src = portfolioImages[category][index];
+  lightboxImg.src = portfolioImages[category][index].src;
+  lightboxImg.alt = portfolioImages[category][index].alt;
   lightbox.classList.add('open');
   // iOS Safari scroll lock
   savedScrollY = window.scrollY;
@@ -186,7 +186,8 @@ function closeLightbox() {
 function navigate(dir) {
   const images = portfolioImages[currentCategory];
   currentIndex = (currentIndex + dir + images.length) % images.length;
-  lightboxImg.src = images[currentIndex];
+  lightboxImg.src = images[currentIndex].src;
+  lightboxImg.alt = images[currentIndex].alt;
 }
 
 document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
