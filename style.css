@@ -397,6 +397,7 @@ h2 {
 
 @media (max-width: 768px) {
   .grid { display: none; }
+  .btn-show-more { display: none; }
 
   .carousel {
     display: block;
