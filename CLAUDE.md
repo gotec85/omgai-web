@@ -10,15 +10,22 @@ omgai-web/
   index.html
   style.css
   script.js
+  favicon.ico
+  favicon.png
+  robots.txt
+  sitemap.xml
   assets/
     portfolio/
-      produktove/
-      reklamni/
-      lifestyle/
-      interiery/
+      produktove/    (1.webp – 4.webp)
+      reklamni/      (hf_*.webp — 11 souborů)
+      lifestyle/     (prázdné)
+      interiery/     (hf_*.webp — 5 souborů)
     logo/
+      1_3.webp       (hlavní logo, 1500×500)
+      1_1.png        (zdrojový soubor pro favicon)
     Hero/
-      Hero.png
+      Hero.webp      (hero background, 1376×768)
+    og-image.jpg     (1200×630, OG sdílení)
 
 ## Design
 Dark background: #0A0A0A
@@ -29,7 +36,7 @@ Font: Inter (Google Fonts)
 Style: minimalist, modern, clean
 
 ## Logo
-Image logo: assets/logo/1_3.png
+Image logo: assets/logo/1_3.webp
 Height: 55px desktop, 44px mobile
 
 ## Sections (in order)
@@ -44,10 +51,10 @@ Height: 55px desktop, 44px mobile
 ---
 
 ## 1. HERO
-Headline: Produkt si zaslouží lepší fotky.
+Headline: Váš produkt si zaslouží lepší fotky.
 Subheadline: AI produktové fotky, lifestylové vizuály a reklamní bannery pro e-shopy.
-CTA buttons: "Nezávazně poptat" → #kontakt, "Zobrazit portfolio →" → #portfolio
-Background: assets/Hero/Hero.png with rgba(10,10,10,0.6) overlay
+CTA buttons: "Nezávazně poptat" → #kontakt, "Jak to funguje →" → #jak-to-funguje
+Background: assets/Hero/Hero.webp with rgba(10,10,10,0.6) overlay (v CSS)
 Full screen height (100svh)
 
 ## 2. JAK TO FUNGUJE
@@ -62,7 +69,7 @@ Step 3: Dostanete hotové vizuály — do 2–3 pracovních dnů
 
 Desktop: grid s lightboxem (klik → lightbox s navigací šipkami)
 Mobile: karusel se swipe gestem a tečkovými indikátory
-Images defined in portfolioImages object in script.js
+Images defined in portfolioImages object in script.js (objekty {src, alt})
 Grid shows 6 images, "Zobrazit více" button reveals rest (hidden on mobile)
 
 ## 4. CENÍK
@@ -103,6 +110,7 @@ Tracked events:
 ### Cookie Consent
 Storage key: `omgai_cookie_consent` (localStorage)
 Values: 'accepted' | 'declined'
+Tlačítka: Odmítnout / Pouze nezbytné / Přijmout vše (gradient pink→purple)
 Banner shows 800ms after first visit, slide-up animation
 
 ### Privacy Modal
@@ -111,11 +119,34 @@ Content: správce dat, formulář, Google Analytics, Google Fonts, cookies, prá
 
 ---
 
+## SEO
+
+### Meta
+- Title: "OMG AI — Profesionální produktové vizuály pro e-shopy"
+- Description: "AI produktové fotky, lifestylové vizuály a reklamní bannery pro e-shopy. Hotovo do 2–3 pracovních dnů. Starter od 2 490 Kč."
+- Canonical: https://www.omgai.cz/
+
+### Open Graph & Twitter Card
+- OG image: assets/og-image.jpg (1200×630)
+- Vše nastaveno včetně og:image:width/height a og:site_name
+
+### Strukturovaná data (JSON-LD)
+- Organization (název, url, logo, email, Instagram, founder)
+- Service (popis, areaServed: CZ, 3 offers s cenami)
+- FAQPage (všech 9 otázek)
+
+### Search Console
+- Doména: omgai.cz (ověřeno DNS TXT)
+- Sitemap odeslaná: https://www.omgai.cz/sitemap.xml
+
+---
+
 ## Mobile Optimizations
 - Carousel with swipe (touch listeners on .carousel element, not track)
 - touch-action removed from carousel to prevent iOS Safari interference
 - e.preventDefault() always called in touchmove (passive: false)
 - btn-show-more hidden on mobile (display: none ≤768px)
+- Nav-links hidden on mobile (display: none ≤768px)
 - Tab buttons same size on mobile and desktop
 - iOS Safari scroll lock in lightbox (position: fixed approach)
 - Lightbox swipe support
