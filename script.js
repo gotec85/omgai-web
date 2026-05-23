@@ -88,6 +88,7 @@ function buildCarousel(category, images) {
   const dotsEl = document.getElementById(`dots-${category}`);
   let current = 0;
   let startX = 0;
+  let startY = 0;
   let dragX = 0;
   let dragging = false;
 
@@ -118,6 +119,7 @@ function buildCarousel(category, images) {
 
   track.addEventListener('touchstart', e => {
     startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
     dragX = 0;
     dragging = true;
     track.style.transition = 'none';
@@ -125,9 +127,13 @@ function buildCarousel(category, images) {
 
   track.addEventListener('touchmove', e => {
     if (!dragging) return;
-    dragX = e.touches[0].clientX - startX;
+    const dx = e.touches[0].clientX - startX;
+    const dy = e.touches[0].clientY - startY;
+    if (Math.abs(dy) > Math.abs(dx)) return; // vertikální gesto → nechej prohlížeč scrollovat
+    e.preventDefault();
+    dragX = dx;
     track.style.transform = `translateX(calc(-${current * 100}% + ${dragX}px))`;
-  }, { passive: true });
+  }, { passive: false });
 
   track.addEventListener('touchend', () => {
     dragging = false;
@@ -162,18 +168,28 @@ const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 let currentCategory = 'produktove';
 let currentIndex = 0;
+let savedScrollY = 0;
 
 function openLightbox(category, index) {
   currentCategory = category;
   currentIndex = index;
   lightboxImg.src = portfolioImages[category][index];
   lightbox.classList.add('open');
+  // iOS Safari scroll lock
+  savedScrollY = window.scrollY;
   document.body.style.overflow = 'hidden';
+  document.body.style.position = 'fixed';
+  document.body.style.top = `-${savedScrollY}px`;
+  document.body.style.width = '100%';
 }
 
 function closeLightbox() {
   lightbox.classList.remove('open');
   document.body.style.overflow = '';
+  document.body.style.position = '';
+  document.body.style.top = '';
+  document.body.style.width = '';
+  window.scrollTo(0, savedScrollY);
 }
 
 function navigate(dir) {
@@ -196,6 +212,15 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowLeft') navigate(-1);
   if (e.key === 'ArrowRight') navigate(1);
 });
+
+let lbTouchStartX = 0;
+lightbox.addEventListener('touchstart', e => {
+  lbTouchStartX = e.touches[0].clientX;
+}, { passive: true });
+lightbox.addEventListener('touchend', e => {
+  const dx = e.changedTouches[0].clientX - lbTouchStartX;
+  if (Math.abs(dx) > 50) navigate(dx < 0 ? 1 : -1);
+}, { passive: true });
 
 // ===== FAQ ACCORDION =====
 document.querySelectorAll('.faq-q').forEach(btn => {
