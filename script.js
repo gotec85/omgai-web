@@ -84,6 +84,7 @@ function buildGrid(gridId, images) {
 }
 
 function buildCarousel(category, images) {
+  const carousel = document.getElementById(`carousel-${category}`);
   const track = document.getElementById(`track-${category}`);
   const dotsEl = document.getElementById(`dots-${category}`);
   let current = 0;
@@ -116,21 +117,21 @@ function buildCarousel(category, images) {
     });
   }
 
-  track.addEventListener('touchstart', e => {
+  carousel.addEventListener('touchstart', e => {
     startX = e.touches[0].clientX;
     dragX = 0;
     dragging = true;
     track.style.transition = 'none';
   }, { passive: true });
 
-  track.addEventListener('touchmove', e => {
+  carousel.addEventListener('touchmove', e => {
     if (!dragging) return;
     e.preventDefault();
     dragX = e.touches[0].clientX - startX;
     track.style.transform = `translateX(calc(-${current * 100}% + ${dragX}px))`;
   }, { passive: false });
 
-  track.addEventListener('touchend', () => {
+  carousel.addEventListener('touchend', () => {
     if (!dragging) return;
     dragging = false;
     track.style.transition = '';
