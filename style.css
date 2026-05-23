@@ -861,11 +861,6 @@ footer span {
     gap: 6px;
   }
 
-  .tab {
-    font-size: 13px;
-    padding: 9px 16px;
-  }
-
   .lightbox-prev { left: 8px; }
   .lightbox-next { right: 8px; }
 }
