@@ -157,6 +157,7 @@ document.querySelectorAll('.tab').forEach(btn => {
     document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    gtag('event', 'portfolio_tab_click', { tab: btn.dataset.tab });
   });
 });
 
@@ -302,5 +303,13 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
     this.reset();
     btn.disabled = false;
     btn.textContent = 'Odeslat';
+    gtag('event', 'form_submit', { event_category: 'contact' });
   }, 800);
+});
+
+// ===== CTA TRACKING =====
+document.querySelectorAll('a[href="#kontakt"]').forEach(el => {
+  el.addEventListener('click', () => {
+    gtag('event', 'cta_click', { label: el.textContent.trim() });
+  });
 });
