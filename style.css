@@ -178,8 +178,9 @@ h2 {
 }
 
 .btn-outline:hover {
-  background: var(--accent);
-  color: var(--bg);
+  background: transparent;
+  color: var(--text);
+  border-color: var(--text);
   transform: translateY(-1px);
 }
 
