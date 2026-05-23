@@ -14,7 +14,11 @@ omgai-web/
     portfolio/
       produktove/
       reklamni/
+      lifestyle/
+      interiery/
     logo/
+    Hero/
+      Hero.png
 
 ## Design
 Dark background: #0A0A0A
@@ -25,84 +29,94 @@ Font: Inter (Google Fonts)
 Style: minimalist, modern, clean
 
 ## Logo
-Text logo: "OMG AI"
-Use accent color #00D4AA for "AI"
-Rest of text white
+Image logo: assets/logo/1_3.png
+Height: 55px desktop, 44px mobile
 
 ## Sections (in order)
 1. Hero
 2. Jak to funguje
 3. Portfolio
 4. Ceník
-5. Kontakt
+5. O mně
+6. FAQ
+7. Kontakt
 
 ---
 
 ## 1. HERO
-Headline: Váš produkt si zaslouží lepší fotky.
-Subheadline: Profesionální produktové vizuály bez fotografa a bez studia.
-CTA button: Nezávazně napsat
-Button links to: #kontakt
-Full screen height
+Headline: Produkt si zaslouží lepší fotky.
+Subheadline: AI produktové fotky, lifestylové vizuály a reklamní bannery pro e-shopy.
+CTA buttons: "Nezávazně poptat" → #kontakt, "Zobrazit portfolio →" → #portfolio
+Background: assets/Hero/Hero.png with rgba(10,10,10,0.6) overlay
+Full screen height (100svh)
 
 ## 2. JAK TO FUNGUJE
-3 steps in a row:
+3 steps with SVG icons and dividers
 
-Step 1:
-Icon: envelope or upload
-Title: Pošlete podklady
-Text: Fotka produktu a krátký popis. Nic víc nepotřebujeme.
-
-Step 2:
-Icon: lightbulb
-Title: My navrhneme koncepty
-Text: Na základě vašeho produktu a cílové skupiny připravíme návrhy scén. Vy jen schválíte směr.
-
-Step 3:
-Icon: image or download
-Title: Dostanete hotové vizuály
-Text: Do 48 hodin máte profesionální fotky připravené k použití.
+Step 1: Pošlete podklady — vyplňte krátký dotazník
+Step 2: My navrhneme koncepty — návrhy scén, schválení směru
+Step 3: Dostanete hotové vizuály — do 2–3 pracovních dnů
 
 ## 3. PORTFOLIO
-Two categories displayed as tabs:
+4 tabs: Produktové fotografie, Reklamní bannery, Lifestylové fotky, Interiéry
 
-Tab 1: Produktové fotografie
-Load all images from assets/portfolio/produktove/
-
-Tab 2: Reklamní vizuály
-Load all images from assets/portfolio/reklamni/
-
-Grid layout, hover effect on images
-Lightbox on click
+Desktop: grid s lightboxem (klik → lightbox s navigací šipkami)
+Mobile: karusel se swipe gestem a tečkovými indikátory
+Images defined in portfolioImages object in script.js
+Grid shows 6 images, "Zobrazit více" button reveals rest (hidden on mobile)
 
 ## 4. CENÍK
-Two columns side by side:
+Single column, 3 plans:
+- Starter — 5 vizuálů — 2 490 Kč
+- Standard — 10 vizuálů — 4 490 Kč (featured, "Nejpopulárnější")
+- Premium — 20 vizuálů — 7 990 Kč
 
-Column 1: Produktové fotografie
-- Starter — 5 fotek — 990 Kč
-- Standard — 10 fotek — 1.900 Kč
-- Premium — 20 fotek — 3.500 Kč
+Note: formáty 1:1, 4:5, 9:16
+Footer: individuální nabídka CTA → #kontakt
 
-Column 2: Reklamní vizuály pro Meta
-- Starter — 3 bannery — 1.500 Kč
-- Standard — 6 bannerů — 2.500 Kč
-- Premium — 12 bannerů — 4.500 Kč
+## 5. O MNĚ
+Martin Gottvald, zakladatel VG Media (vgmedia.cz)
+Max-width 720px centered block
 
-Below both columns:
-Balíček (fotografie + vizuály): Individuální nabídka
-CTA: Nezávazně napsat → links to #kontakt
+## 6. FAQ
+9 otázek, accordion (jedna otevřená najednou)
 
-## 5. KONTAKT
-Section id: kontakt
-Simple contact form:
-- Jméno
-- Email
-- Popis projektu
-- Submit button: Odeslat
-
-Below form:
-Email: info@omgai.cz
-Instagram: @o_mg_ai with link to https://www.instagram.com/o_mg_ai/
+## 7. KONTAKT
+Form: Jméno, Email, Popis projektu, Odeslat
+Contact: info@omgai.cz, @o_mg_ai → instagram.com/o_mg_ai/
 
 ## Footer
-© 2026 OMG AI
+© 2026 OMG AI · Zásady ochrany osobních údajů (opens privacy modal)
+
+---
+
+## Analytics & GDPR
+
+### Google Analytics
+Measurement ID: G-GK5GEYKT3G
+Implementation: Consent Mode v2 (default: denied, granted after cookie accept)
+Tracked events:
+- `cta_click` — klik na jakýkoliv odkaz s href="#kontakt"
+- `form_submit` — úspěšné odeslání kontaktního formuláře
+- `portfolio_tab_click` — přepnutí záložky portfolia (parametr: tab name)
+
+### Cookie Consent
+Storage key: `omgai_cookie_consent` (localStorage)
+Values: 'accepted' | 'declined'
+Banner shows 800ms after first visit, slide-up animation
+
+### Privacy Modal
+Opens from: cookie banner link + footer link
+Content: správce dat, formulář, Google Analytics, Google Fonts, cookies, práva uživatelů
+
+---
+
+## Mobile Optimizations
+- Carousel with swipe (touch listeners on .carousel element, not track)
+- touch-action removed from carousel to prevent iOS Safari interference
+- e.preventDefault() always called in touchmove (passive: false)
+- btn-show-more hidden on mobile (display: none ≤768px)
+- Tab buttons same size on mobile and desktop
+- iOS Safari scroll lock in lightbox (position: fixed approach)
+- Lightbox swipe support
+- Responsive breakpoints: 768px, 600px, 480px
