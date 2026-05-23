@@ -119,14 +119,14 @@ h2 {
 }
 
 .nav-links a {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--secondary);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
   transition: color 0.2s;
 }
 
 .nav-links a:hover {
-  color: var(--text);
+  color: var(--accent);
 }
 
 .btn-nav {
