@@ -403,6 +403,7 @@ h2 {
     position: relative;
     overflow: hidden;
     border-radius: var(--radius);
+    touch-action: pan-y;
   }
 
   .carousel-track {

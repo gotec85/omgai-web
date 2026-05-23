@@ -88,11 +88,8 @@ function buildCarousel(category, images) {
   const dotsEl = document.getElementById(`dots-${category}`);
   let current = 0;
   let startX = 0;
-  let startY = 0;
   let dragX = 0;
   let dragging = false;
-  let directionLocked = false;
-  let isHorizontalSwipe = false;
 
   images.forEach((src, i) => {
     const slide = document.createElement('div');
@@ -121,33 +118,21 @@ function buildCarousel(category, images) {
 
   track.addEventListener('touchstart', e => {
     startX = e.touches[0].clientX;
-    startY = e.touches[0].clientY;
     dragX = 0;
     dragging = true;
-    directionLocked = false;
-    isHorizontalSwipe = false;
     track.style.transition = 'none';
   }, { passive: true });
 
   track.addEventListener('touchmove', e => {
     if (!dragging) return;
-    const dx = e.touches[0].clientX - startX;
-    const dy = e.touches[0].clientY - startY;
-    if (!directionLocked) {
-      if (Math.abs(dx) < 5 && Math.abs(dy) < 5) return;
-      isHorizontalSwipe = Math.abs(dx) >= Math.abs(dy);
-      directionLocked = true;
-    }
-    if (!isHorizontalSwipe) return;
     e.preventDefault();
-    dragX = dx;
+    dragX = e.touches[0].clientX - startX;
     track.style.transform = `translateX(calc(-${current * 100}% + ${dragX}px))`;
   }, { passive: false });
 
   track.addEventListener('touchend', () => {
     if (!dragging) return;
     dragging = false;
-    directionLocked = false;
     track.style.transition = '';
     if (dragX < -50) goTo(current + 1);
     else if (dragX > 50) goTo(current - 1);
