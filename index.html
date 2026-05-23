@@ -8,6 +8,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <!-- Google Analytics (Consent Mode v2) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GK5GEYKT3G"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied'
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-GK5GEYKT3G');
+  </script>
 </head>
 <body>
 
@@ -248,8 +262,11 @@
       <h3>Doba uchovávání</h3>
       <p>Osobní údaje uchováváme po dobu nezbytně nutnou k vyřízení poptávky, nejdéle 1 rok.</p>
 
+      <h3>Google Analytics</h3>
+      <p>Se souhlasem používáme Google Analytics pro měření návštěvnosti (počet návštěv, chování na stránce). Data jsou anonymizována a zpracovává je Google LLC. Bez souhlasu se žádná analytická data neodesílají. Více informací na <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>.</p>
+
       <h3>Google Fonts</h3>
-      <p>Tento web načítá písma ze serverů Google (Google Fonts). Při načtení stránky může být vaše IP adresa odeslána na servery Google. Více informací na <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>.</p>
+      <p>Tento web načítá písma ze serverů Google (Google Fonts). Při načtení stránky může být vaše IP adresa odeslána na servery Google.</p>
 
       <h3>Cookies</h3>
       <p>Tento web nepoužívá vlastní sledovací cookies. Váš souhlas s cookies je uložen lokálně v prohlížeči (localStorage) a není přenášen na server.</p>
@@ -262,7 +279,7 @@
   <!-- COOKIE BANNER -->
   <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Souhlas s cookies">
     <div class="cookie-inner">
-      <p class="cookie-text">Tento web používá <strong>Google Fonts</strong>, které mohou ukládat cookies třetích stran. Více informací v <a href="#" id="open-privacy" class="cookie-link">zásadách ochrany osobních údajů</a>.</p>
+      <p class="cookie-text">Tento web používá <strong>Google Analytics</strong> a <strong>Google Fonts</strong>. Souhlasem povolíte měření návštěvnosti. Více v <a href="#" id="open-privacy" class="cookie-link">zásadách ochrany osobních údajů</a>.</p>
       <div class="cookie-actions">
         <button id="cookie-decline" class="cookie-btn cookie-btn--outline">Odmítnout</button>
         <button id="cookie-accept" class="cookie-btn cookie-btn--primary">Přijmout</button>

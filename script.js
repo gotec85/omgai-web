@@ -261,13 +261,25 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape' && privacyMod
 const cookieBanner = document.getElementById('cookie-banner');
 const COOKIE_KEY = 'omgai_cookie_consent';
 
-if (!localStorage.getItem(COOKIE_KEY)) {
+function grantConsent() {
+  gtag('consent', 'update', {
+    'ad_storage': 'granted',
+    'ad_user_data': 'granted',
+    'ad_personalization': 'granted',
+    'analytics_storage': 'granted'
+  });
+}
+
+if (localStorage.getItem(COOKIE_KEY) === 'accepted') {
+  grantConsent();
+} else if (!localStorage.getItem(COOKIE_KEY)) {
   setTimeout(() => cookieBanner.classList.add('visible'), 800);
 }
 
 document.getElementById('cookie-accept').addEventListener('click', () => {
   localStorage.setItem(COOKIE_KEY, 'accepted');
   cookieBanner.classList.remove('visible');
+  grantConsent();
 });
 
 document.getElementById('cookie-decline').addEventListener('click', () => {
