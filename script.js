@@ -267,6 +267,11 @@ document.getElementById('cookie-accept').addEventListener('click', () => {
   grantConsent();
 });
 
+document.getElementById('cookie-necessary').addEventListener('click', () => {
+  localStorage.setItem(COOKIE_KEY, 'declined');
+  cookieBanner.classList.remove('visible');
+});
+
 document.getElementById('cookie-decline').addEventListener('click', () => {
   localStorage.setItem(COOKIE_KEY, 'declined');
   cookieBanner.classList.remove('visible');
