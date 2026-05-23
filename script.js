@@ -237,6 +237,26 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   });
 });
 
+// ===== PRIVACY MODAL =====
+const privacyModal = document.getElementById('privacy-modal');
+
+function openPrivacy(e) {
+  e.preventDefault();
+  privacyModal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closePrivacy() {
+  privacyModal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('open-privacy').addEventListener('click', openPrivacy);
+document.getElementById('open-privacy-footer').addEventListener('click', openPrivacy);
+document.getElementById('close-privacy').addEventListener('click', closePrivacy);
+privacyModal.addEventListener('click', e => { if (e.target === privacyModal) closePrivacy(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && privacyModal.classList.contains('open')) closePrivacy(); });
+
 // ===== COOKIE CONSENT =====
 const cookieBanner = document.getElementById('cookie-banner');
 const COOKIE_KEY = 'omgai_cookie_consent';
