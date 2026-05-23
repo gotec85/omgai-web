@@ -237,6 +237,24 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   });
 });
 
+// ===== COOKIE CONSENT =====
+const cookieBanner = document.getElementById('cookie-banner');
+const COOKIE_KEY = 'omgai_cookie_consent';
+
+if (!localStorage.getItem(COOKIE_KEY)) {
+  setTimeout(() => cookieBanner.classList.add('visible'), 800);
+}
+
+document.getElementById('cookie-accept').addEventListener('click', () => {
+  localStorage.setItem(COOKIE_KEY, 'accepted');
+  cookieBanner.classList.remove('visible');
+});
+
+document.getElementById('cookie-decline').addEventListener('click', () => {
+  localStorage.setItem(COOKIE_KEY, 'declined');
+  cookieBanner.classList.remove('visible');
+});
+
 // ===== CONTACT FORM =====
 document.getElementById('contact-form').addEventListener('submit', function (e) {
   e.preventDefault();
